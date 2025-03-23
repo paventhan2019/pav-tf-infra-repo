@@ -16,12 +16,12 @@ resource "aws_instance" "pav-app-server" {
   }
 }
 
-  terraform {
-    backend "s3" {
-      bucket         = "t2s-finops-terraform-state"
-      key            = "terraform.tfstate"
-      region         = "us-east-1"
-      encrypt        = true
-      dynamodb_table = "t2s-terraform-lock"
+terraform {
+  backend "s3" {
+    bucket         = "t2s-finops-terraform-state"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "t2s-terraform-lock"
   }
-  }
+}
